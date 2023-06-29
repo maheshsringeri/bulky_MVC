@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\js\Product.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\js\Product.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Bulky.DataAccess\Bulky.DataAccess.csproj" />
+	  <ProjectReference Include="..\Bulky.Models\Bulky.Models.csproj" />
+	  <ProjectReference Include="..\Bulky.Utility\Bulky.Utility.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Areas\Admin\Models\" />
+	  <Folder Include="Areas\Customer\Models\" />
+	  <Folder Include="wwwroot\Images\Product\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\js\Product.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.5.23313.2" />
+	</ItemGroup>
+
+</Project>
