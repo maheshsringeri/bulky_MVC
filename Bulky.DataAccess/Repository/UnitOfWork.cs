@@ -15,11 +15,14 @@ namespace Bulky.DataAccess.Repository
 
         public IProductRepository Product { get; private set; }
 
+        public ICompanyRepository Company { get; private set; }
+
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             Category = new CategoryRepository(db);
             Product = new ProductRepository(db);
+            Company = new CompanyRepository(db);
         }
 
 

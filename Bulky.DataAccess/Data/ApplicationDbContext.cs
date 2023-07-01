@@ -15,6 +15,7 @@ namespace Bulky.DataAccess.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Company> Companies { get; set; }
 
 
 
@@ -27,6 +28,39 @@ namespace Bulky.DataAccess.Data
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
+                );
+
+            modelBuilder.Entity<Company>().HasData(
+                new Company
+                {
+                    Id = 1,
+                    Name = "Educo International India Pvt. Ltd.",
+                    StreetAddress = "Sheshadripuram",
+                    City = "Bangalore",
+                    State = "Karnataka",
+                    PostalCode = "560054",
+                    PhoneNumber = "9900306577"
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "Meta Learn",
+                    StreetAddress = "Vasanth Nagar",
+                    City = "Bangalore",
+                    State = "Karnataka",
+                    PostalCode = "560073",
+                    PhoneNumber = "9900306778"
+                },
+                new Company
+                {
+                    Id = 3,
+                    Name = "Excel Soft.",
+                    StreetAddress = "Sheshadripuram",
+                    City = "Bangalore",
+                    State = "Karnataka",
+                    PostalCode = "560054",
+                    PhoneNumber = "9900306577"
+                }
                 );
 
             modelBuilder.Entity<Product>().HasData(
