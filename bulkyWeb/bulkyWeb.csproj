@@ -7,39 +7,40 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="wwwroot\js\Product.js" />
+		<Content Remove="wwwroot\js\Product.js" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <_ContentIncludedByDefault Remove="wwwroot\js\Product.js" />
+		<_ContentIncludedByDefault Remove="wwwroot\js\Product.js" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Bulky.DataAccess\Bulky.DataAccess.csproj" />
-	  <ProjectReference Include="..\Bulky.Models\Bulky.Models.csproj" />
-	  <ProjectReference Include="..\Bulky.Utility\Bulky.Utility.csproj" />
+		<ProjectReference Include="..\Bulky.DataAccess\Bulky.DataAccess.csproj" />
+		<ProjectReference Include="..\Bulky.Models\Bulky.Models.csproj" />
+		<ProjectReference Include="..\Bulky.Utility\Bulky.Utility.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Areas\Admin\Models\" />
-	  <Folder Include="Areas\Customer\Models\" />
-	  <Folder Include="wwwroot\Images\Product\" />
+		<Folder Include="Areas\Admin\Models\" />
+		<Folder Include="Areas\Customer\Models\" />
+		<Folder Include="wwwroot\Images\Product\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="wwwroot\js\Product.js" />
+		<None Include="wwwroot\js\Product.js" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-preview.5.23302.2" />
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.5.23302.2" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.5.23280.1" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.5.23280.1" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.5.23280.1">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.5.23313.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-preview.5.23302.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.5.23280.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.5.23280.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.5.23280.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<!--<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.0-preview.5.23302.2" />-->
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.5.23313.2" />
+		<PackageReference Include="Stripe.net" Version="41.26.0" />
 	</ItemGroup>
 
 </Project>

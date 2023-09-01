@@ -1,0 +1,59 @@
+﻿using Bulky.DataAccess.Data;
+using Bulky.DataAccess.Repository.IRepository;
+using Bulky.Models;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bulky.DataAccess.Repository
+{
+    public class OrderHeaderRepository : Repository<OrderHeader>, IOrderHeaderRepository
+    {
+        ApplicationDbContext _db;
+        public OrderHeaderRepository(ApplicationDbContext db) : base(db)
+        {
+            _db = db;
+        }
+
+        void IOrderHeaderRepository.Update(OrderHeader orderHeader)
+        {
+            _db.OrderHeaders.Update(orderHeader);
+        }
+
+        void IOrderHeaderRepository.UpdateStatus(int id, string orderStatus, string? paymentStatus)
+        {
+            var orderFromDb = _db.OrderHeaders.FirstOrDefault(x => x.Id == id);
+            if (orderFromDb is not null)
+            {
+                orderFromDb.OrderStatus = orderStatus;
+                if (!string.IsNullOrEmpty(paymentStatus))
+                {
+                    orderFromDb.PaymentStatus = paymentStatus;
+                }
+            }
+        }
+
+        void IOrderHeaderRepository.UpdateStripePaymentId(int id, string sessionId, string paymentIntentId)
+        {
+            var orderFromDb = _db.OrderHeaders.FirstOrDefault(x => x.Id == id);
+
+            if (orderFromDb is not null)
+            {
+                if (!string.IsNullOrEmpty(sessionId))
+                {
+                    orderFromDb.SessionId = sessionId;
+                }
+                if (!string.IsNullOrEmpty(paymentIntentId))
+                {
+                    orderFromDb.PaymentIntentId = paymentIntentId;
+                    orderFromDb.PaymentDate = DateTime.Now;
+                }
+
+            }
+
+        }
+    }
+}
