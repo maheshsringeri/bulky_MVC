@@ -2,7 +2,6 @@
 using Bulky.Models;
 using Bulky.Models.ViewModels;
 using Bulky.Utility;
-using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
