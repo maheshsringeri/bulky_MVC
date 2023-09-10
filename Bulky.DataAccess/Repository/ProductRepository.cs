@@ -34,11 +34,12 @@ namespace Bulky.DataAccess.Repository
                 productFrmDB.Price50 = product.Price50;
                 productFrmDB.Price100 = product.Price100;
                 productFrmDB.CategoryID = product.CategoryID;
+                productFrmDB.ProductImages = product.ProductImages;
 
-                if (product.ImageUrl != null)
-                {
-                    productFrmDB.ImageUrl = product.ImageUrl;
-                }
+                //if (product.ImageUrl != null)
+                //{
+                //    productFrmDB.ImageUrl = product.ImageUrl;
+                //}
             }
         }
     }

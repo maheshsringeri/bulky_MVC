@@ -31,7 +31,7 @@ namespace bulkyWeb.Areas.Customer.Controllers
                         _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claims.Value).Count());
             }
 
-            IEnumerable<Product> products = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> products = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
 
             return View(products);
         }
@@ -41,7 +41,7 @@ namespace bulkyWeb.Areas.Customer.Controllers
             ShoppingCart shoppingCart = new()
             {
                 ProductId = productId,
-                Product = _unitOfWork.Product.Get(q => q.Id == productId, includeProperties: "Category"),
+                Product = _unitOfWork.Product.Get(q => q.Id == productId, includeProperties: "Category,ProductImages"),
                 Count = 1
             };
 
